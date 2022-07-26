@@ -13,12 +13,13 @@ public class MatrixTraversalImplementor {
      */
     public static List<Integer> printMatrixInSpiral(int[][] inputMatrix) {
         List<Integer> integers = new ArrayList<>();
-        Set<Integer> sizeSet = Arrays.stream(inputMatrix)
-                .map(a -> a.length).collect(Collectors.toSet());
-        if (sizeSet.size() > 1) {
+        if (isNullOrEmptyMatrix(inputMatrix)) {
             return integers;
         }
-        if (isNullOrEmptyMatrix(inputMatrix)) {
+        Set<Integer> sizeSet = Arrays.stream(inputMatrix)
+                .map(firstRow -> firstRow.length)
+                .collect(Collectors.toSet());
+        if (sizeSet.size() > 1) {
             return integers;
         }
         int eRow = inputMatrix.length;
