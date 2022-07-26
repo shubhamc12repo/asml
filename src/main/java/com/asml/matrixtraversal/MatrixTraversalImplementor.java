@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class MatrixTraversalImplementor {
 
+    public static final int ZERO_INDEX = 0;
+
     /**
      * Function to traverse matrix in spiral patten and return list of integers
      *
@@ -16,15 +18,17 @@ public class MatrixTraversalImplementor {
         if (isNullOrEmptyMatrix(inputMatrix)) {
             return integers;
         }
+        //Checking if matrix columns are of equal size using set.
         Set<Integer> sizeSet = Arrays.stream(inputMatrix)
                 .map(firstRow -> firstRow.length)
                 .collect(Collectors.toSet());
         if (sizeSet.size() > 1) {
             return integers;
         }
-        int eRow = inputMatrix.length;
-        int eCol = inputMatrix[0].length;
-        int sRow = 0, sCol = 0, i;
+        int eRow = inputMatrix.length;              //ending row index
+        int eCol = inputMatrix[0].length;           //ending column index
+        int sRow = ZERO_INDEX, sCol = ZERO_INDEX;   //starting row and column index
+        int i;                                      //iterator
 
         while (sRow < eRow && sCol < eCol) {
             for (i = sCol; i < eCol; i++) {
