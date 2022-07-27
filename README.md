@@ -21,7 +21,7 @@ To divide the matrix into squares by the edges and adding to the list that has t
 4. Loop through the starting row, add elements into the list and increase the value of starting row index.
 5. Loop through the ending column, add elements into the list decrease the value of ending column index.
 6. Loop through the ending row, add elements into the list and decrease the value of ending row index.
-7. Loop through the starting cloumn, add elements into the list  and increase the count of starting column index.
+7. Loop through the starting column, add elements into the list  and increase the count of starting column index.
 8. Repeat steps 3 to 7 till starting row index is greater than ending row index and starting column index is greater than ending column index.
 
 ## Complexity Analysis: 
